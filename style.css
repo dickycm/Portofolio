@@ -73,6 +73,7 @@ body {
   line-height: 1.5;
 }
 
+
 /* ==== SOCIAL ICONS ==== */
 .social-icons {
   margin-top: 10px;
@@ -228,7 +229,7 @@ body {
 .js { color: #f0db4f; }
 .laravel { color: #ff2d20; }
 .mysql { color: #00758f; }
-.ajax { color: #6c757d; }
+.postgresql { color: #337ebb; }
 .react { color: #61dafb; }
 .git { color: #f1502f; }
   

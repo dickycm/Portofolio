@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const roles = [
     "Selamat Datang di",
-    "Creative UX/UI Designer",
     "Front-End Developer",
+    "Full-Stack Developer",
   ];
 
   const typingElement = document.getElementById("typing-text");

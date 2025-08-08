@@ -1,187 +1,186 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dicky Chandra - Portfolio Card</title>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dicky Chandra - Portfolio Card</title>
 
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="card">
-    <!-- Profile Image -->
-    <div class="card-image">
-      <img src="Assets/profile.jpg" alt="Profile Art" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <!-- Profile Image -->
+      <div class="card-image">
+        <img src="Assets/profile.jpg" alt="Profile Art" />
+      </div>
+
+      <!-- Card Info -->
+      <div class="card-info">
+        <h1>Dicky Chandra</h1>
+
+        <!-- Typing Animation -->
+        <p class="typing" id="typing-text"></p>
+
+        <!-- Deskripsi -->
+        <p class="desc">
+          Saya senang mengubah ide menjadi desain visual yang menarik dan interaktif.<br />
+          Menggabungkan kreativitas, logika, dan detail dalam setiap proyek.
+        </p>
+
+        <div class="skills">
+          <section class="skills-section">
+            <h3>💡 Skill yang Saya Kuasai</h3>
+            <div class="skills-grid">
+              <div class="skill-item"><i class="fab fa-html5 html"></i><span>HTML</span></div>
+              <div class="skill-item"><i class="fab fa-css3-alt css"></i><span>CSS</span></div>
+              <div class="skill-item"><i class="fab fa-js-square js"></i><span>JavaScript</span></div>
+              <div class="skill-item"><i class="fab fa-laravel laravel"></i><span>Laravel</span></div>
+              <div class="skill-item"><i class="fas fa-database mysql"></i><span>MySQL</span></div>
+              <div class="skill-item"><i class="fas fa-database postgresql"></i><span>PostgreSQL</span></div>
+              <div class="skill-item"><i class="fab fa-react react"></i><span>React</span></div>
+              <div class="skill-item"><i class="fab fa-git-alt git"></i><span>Git</span></div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Sosial Media -->
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/dicky-chandra-73525835a" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.facebook.com/share/16QshDzvED/" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://github.com/dickycm" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/kyycm" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <!-- Tombol Aksi -->
+        <div class="buttons d-flex gap-2 mt-3 flex-wrap">
+          <!-- Tombol Modal -->
+          <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalProjek">
+            <i class="fas fa-folder-open"></i> Lihat Projek
+          </button>
+
+          <!-- Tombol CV -->
+          <a href="Assets/Dicky Chandra Mulya CV.pdf" class="btn btn-primary shadow px-4 py-2 rounded d-inline-flex align-items-center gap-2" download>
+            <i class="fas fa-download"></i> Unduh CV
+          </a>
+        </div>
+      </div>
     </div>
 
-    <!-- Card Info -->
-    <div class="card-info">
-      <h1>Dicky Chandra</h1>
-
-      <!-- Typing Animation -->
-      <p class="typing" id="typing-text"></p>
-
-      <!-- Deskripsi -->
-      <p class="desc">
-        Saya senang mengubah ide menjadi desain visual yang menarik dan interaktif.<br />
-        Menggabungkan kreativitas, logika, dan detail dalam setiap proyek.
-      </p>
-
-      <div class="skills">
-        <section class="skills-section">
-          <h3>💡 Skill yang Saya Kuasai</h3>
-          <div class="skills-grid">
-            <div class="skill-item"><i class="fab fa-html5 html"></i><span>HTML</span></div>
-            <div class="skill-item"><i class="fab fa-css3-alt css"></i><span>CSS</span></div>
-            <div class="skill-item"><i class="fab fa-js-square js"></i><span>JavaScript</span></div>
-            <div class="skill-item"><i class="fab fa-laravel laravel"></i><span>Laravel</span></div>
-            <div class="skill-item"><i class="fas fa-database mysql"></i><span>MySQL</span></div>
-            <div class="skill-item"><i class="fas fa-server ajax"></i><span>AJAX</span></div>
-            <div class="skill-item"><i class="fab fa-react react"></i><span>React</span></div>
-            <div class="skill-item"><i class="fab fa-git-alt git"></i><span>Git</span></div>
+    <!-- Modal Projek -->
+    <div class="modal fade" id="modalProjek" tabindex="-1" aria-labelledby="modalProjekLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalProjekLabel">Projek Saya</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
           </div>
-        </section>
+          <div class="modal-body">
+            <p>Beberapa projek yang telah saya kembangkan:</p>
+            <div class="row g-4">
+              <!-- Card 1 -->
+              <div class="col-md-6">
+                <div class="card h-100 shadow-sm">
+                  <img src="Assets/ProjekSistemKaryawan.png" class="card-img-top project-img" alt="Projek Sistem Karyawan">
+                  <div class="card-body">
+                    <h5 class="card-title">💼 Sistem Karyawan</h5>
+                    <p class="card-text">
+                      Aplikasi berbasis Laravel untuk kelola data karyawan: CRUD, slip gaji via email, dashboard sesuai role, dark mode & pagination. Cocok untuk perusahaan kecil-menengah.
+                    </p>
+                    <a href="404.html" target="_blank" class="btn btn-primary">Lihat Proyek</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="col-md-6">
+                <div class="card h-100 shadow-sm">
+                  <img src="Assets/ProjekSipintar.png" class="card-img-top project-img" alt="Projek Kalkulator">
+                  <div class="card-body">
+                    <h5 class="card-title">🧮 Kalkulator Pintar</h5>
+                    <p class="card-text">
+                      Web kalkulator interaktif berbasis JavaScript. Fitur: hitung dasar, rumus bangun, langkah per langkah, dan desain responsif. Cocok untuk pelajar & umum.
+                    </p>
+                    <a href="https://dickycm.github.io/sihpintar/" target="_blank" class="btn btn-primary">Lihat Proyek</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Card 3 -->
+  <div class="col-md-6">
+    <div class="card h-100 shadow-lg border-0 rounded-4 overflow-hidden project-card">
+      <img src="Assets/Screenshot 2025-08-08 092207.png" 
+          class="card-img-top project-img" 
+          alt="Projek Kantin Ku">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title fw-bold text-primary mb-2">Kantin Ku</h5>
+        <p class="card-text text-muted flex-grow-1">
+          Aplikasi kantin berbasis web untuk memesan makanan dan minuman. 
+          Fitur: daftar menu, keranjang belanja, dan pembayaran online. 
+          Cocok untuk sekolah atau kampus.
+        </p>
+        <a href="404.html" target="_blank" class="btn btn-primary mt-auto px-4 rounded-pill">
+          Lihat Proyek
+        </a>
       </div>
-
-      <!-- Sosial Media -->
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/dicky-chandra-73525835a" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.facebook.com/share/16QshDzvED/" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://github.com/dickycm" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.instagram.com/kyycm" target="_blank"><i class="fab fa-instagram"></i></a>
-      </div>
-
-      <!-- Tombol Aksi -->
-      <div class="buttons d-flex gap-2 mt-3 flex-wrap">
-        <!-- Tombol Modal -->
-        <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalProjek">
-          <i class="fas fa-folder-open"></i> Lihat Projek
-        </button>
-
-        <!-- Tombol CV -->
-        <a href="Assets/Dicky Chandra Mulya CV.pdf" class="btn btn-primary shadow px-4 py-2 rounded d-inline-flex align-items-center gap-2" download>
-          <i class="fas fa-download"></i> Unduh CV
+    </div>
+  </div>
+            <!-- Card 4 -->
+  <div class="col-md-6">
+    <div class="card h-100 shadow-lg border-0 rounded-4 overflow-hidden project-card">
+      <img src="Assets/Screenshot 2025-08-08 113140.png" 
+          class="card-img-top project-img" 
+          alt="BobyBot – Asisten Chat AI">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title fw-bold text-primary mb-2">BobyBot – Asisten Chat AI</h5>
+        <p class="card-text text-muted flex-grow-1">
+    <strong>BobyBot</strong> adalah chatbot AI ringan dengan tampilan modern, fitur chat real-time, penyimpanan lokal, dan notifikasi interaktif.
+  </p>
+        <a href="404.html" target="_blank" class="btn btn-primary mt-auto px-4 rounded-pill">
+          Lihat Proyek
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Modal Projek -->
-  <div class="modal fade" id="modalProjek" tabindex="-1" aria-labelledby="modalProjekLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalProjekLabel">Projek Saya</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
-        </div>
-        <div class="modal-body">
-          <p>Beberapa projek yang telah saya kembangkan:</p>
-          <div class="row g-4">
-            <!-- Card 1 -->
-            <div class="col-md-6">
-              <div class="card h-100 shadow-sm">
-                <img src="Assets/ProjekSistemKaryawan.png" class="card-img-top project-img" alt="Projek Sistem Karyawan">
-                <div class="card-body">
-                  <h5 class="card-title">💼 Sistem Karyawan</h5>
-                  <p class="card-text">
-                    Aplikasi berbasis Laravel untuk kelola data karyawan: CRUD, slip gaji via email, dashboard sesuai role, dark mode & pagination. Cocok untuk perusahaan kecil-menengah.
-                  </p>
-                  <a href="404.html" target="_blank" class="btn btn-primary">Lihat Proyek</a>
-                </div>
-              </div>
+
             </div>
-
-            <!-- Card 2 -->
-            <div class="col-md-6">
-              <div class="card h-100 shadow-sm">
-                <img src="Assets/ProjekSipintar.png" class="card-img-top project-img" alt="Projek Kalkulator">
-                <div class="card-body">
-                  <h5 class="card-title">🧮 Kalkulator Pintar</h5>
-                  <p class="card-text">
-                    Web kalkulator interaktif berbasis JavaScript. Fitur: hitung dasar, rumus bangun, langkah per langkah, dan desain responsif. Cocok untuk pelajar & umum.
-                  </p>
-                  <a href="https://dickycm.github.io/sihpintar/" target="_blank" class="btn btn-primary">Lihat Proyek</a>
-                </div>
-              </div>
-            </div>
-            <!-- Card 3 -->
-<div class="col-md-6">
-  <div class="card h-100 shadow-lg border-0 rounded-4 overflow-hidden project-card">
-    <img src="Assets/Screenshot 2025-08-08 092207.png" 
-         class="card-img-top project-img" 
-         alt="Projek Kantin Ku">
-    <div class="card-body d-flex flex-column">
-      <h5 class="card-title fw-bold text-primary mb-2">Kantin Ku</h5>
-      <p class="card-text text-muted flex-grow-1">
-        Aplikasi kantin berbasis web untuk memesan makanan dan minuman. 
-        Fitur: daftar menu, keranjang belanja, dan pembayaran online. 
-        Cocok untuk sekolah atau kampus.
-      </p>
-      <a href="404.html" target="_blank" class="btn btn-primary mt-auto px-4 rounded-pill">
-        Lihat Proyek
-      </a>
-    </div>
-  </div>
-</div>
-           <!-- Card 4 -->
-<div class="col-md-6">
-  <div class="card h-100 shadow-lg border-0 rounded-4 overflow-hidden project-card">
-    <img src="Assets/Screenshot 2025-08-08 113140.png" 
-         class="card-img-top project-img" 
-         alt="BobyBot – Asisten Chat AI">
-    <div class="card-body d-flex flex-column">
-      <h5 class="card-title fw-bold text-primary mb-2">BobyBot – Asisten Chat AI</h5>
-      <p class="card-text text-muted flex-grow-1">
-  <strong>BobyBot</strong> adalah chatbot AI ringan dengan tampilan modern, fitur chat real-time, penyimpanan lokal, dan notifikasi interaktif.
-</p>
-
-      <a href="404.html" target="_blank" class="btn btn-primary mt-auto px-4 rounded-pill">
-        Lihat Proyek
-      </a>
-    </div>
-  </div>
-</div>
-
-
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  
+    
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Custom Script -->
-  <script src="script.js"></script>
+    <!-- Custom Script -->
+    <script src="script.js"></script>
 
-  <!-- Modal Cleanup -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const modalProjek = document.getElementById('modalProjek');
-      if (modalProjek) {
-        modalProjek.addEventListener('hidden.bs.modal', function () {
-          document.querySelectorAll('.modal-backdrop').forEach(b => b.remove());
-          document.body.classList.remove('modal-open');
-          document.body.style.overflow = '';
-          document.body.style.paddingRight = '';
-        });
-      }
-    });
-  </script>
-</body>
-</html>
+    <!-- Modal Cleanup -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const modalProjek = document.getElementById('modalProjek');
+        if (modalProjek) {
+          modalProjek.addEventListener('hidden.bs.modal', function () {
+            document.querySelectorAll('.modal-backdrop').forEach(b => b.remove());
+            document.body.classList.remove('modal-open');
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
+          });
+        }
+      });
+    </script>
+  </body>
+  </html>
