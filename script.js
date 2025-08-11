@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const roles = [
+  const roles = [ 
     "Selamat Datang di",
     "Front-End Developer",
     "Full-Stack Developer",

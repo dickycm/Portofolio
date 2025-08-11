@@ -1,89 +1,202 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>404 Not Found</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Halaman Tidak Ditemukan</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      margin: 0;
       height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: white;
+      background: radial-gradient(circle at top, #eef2ff, #dbe4f3);
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      color: #333;
       overflow: hidden;
+      position: relative;
+      animation: fadeIn 1s ease-out;
     }
 
-    .container {
-      text-align: center;
-      animation: fadeIn 1s ease-in-out;
+    .parallax-bg {
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      top: -25%;
+      left: -25%;
+      background: radial-gradient(circle, #c7d2fe 0%, transparent 70%),
+                  radial-gradient(circle, #a5b4fc 0%, transparent 70%);
+      background-repeat: no-repeat;
+      background-position: 20% 30%, 80% 70%;
+      background-size: 40% 40%, 30% 30%;
+      filter: blur(40px);
+      transition: transform 0.3s ease-out;
+      z-index: 0;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 1;
     }
 
     h1 {
-      font-size: 12rem;
-      font-weight: 800;
-      background: linear-gradient(45deg, #ff416c, #ff4b2b);
-background-clip: text;
--webkit-background-clip: text;
-
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 15px;
+      font-size: clamp(4rem, 10vw, 8rem);
+      font-weight: 700;
+      background: linear-gradient(90deg, #4f46e5, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
+      animation: glow 3s ease-in-out infinite alternate;
+      margin: 0;
+      z-index: 2;
     }
 
     p {
-      font-size: 1.1rem;
-      margin-bottom: 30px;
-      color: #dcdcdc;
+      font-size: clamp(1rem, 2vw, 1.4rem);
+      margin-top: 10px;
+      opacity: 0.8;
+      z-index: 2;
     }
 
     a {
-      text-decoration: none;
+      margin-top: 25px;
       padding: 12px 28px;
-      background-color: #ff4b2b;
+      border-radius: 50px;
+      background: linear-gradient(90deg, #4f46e5, #7c3aed);
       color: white;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+      transition: 0.3s ease;
+      z-index: 2;
     }
 
     a:hover {
-      background-color: #ff416c;
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5);
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px rgba(124, 58, 237, 0.4);
+      }
+      to {
+        text-shadow: 0 0 30px rgba(79, 70, 229, 0.6);
+      }
     }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    @media screen and (max-width: 600px) {
-      h1 {
-        font-size: 6rem;
-      }
-      h2 {
-        font-size: 1.5rem;
-      }
-    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>404</h1>
-    <h2>Oops! Halaman Tidak Ditemukan</h2>
-    <p>Halaman yang kamu cari mungkin sudah dipindahkan, dihapus, atau tidak pernah ada.</p>
-    <a href="index.html">Kembali ke Beranda</a>
-  </div>
+  <div class="parallax-bg" id="parallax"></div>
+  <canvas id="particles"></canvas>
+
+  <h1>404</h1>
+  <p>Sepertinya Anda tersesat di halaman yang tidak ada.</p>
+  <a href="/">Kembali ke Beranda</a>
+
+  <script>
+    const parallax = document.getElementById("parallax");
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+
+    let particles = [];
+    const numParticles = 50;
+    let mouse = { x: null, y: null };
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    for (let i = 0; i < numParticles; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 3 + 1,
+        speedX: (Math.random() - 0.5) * 0.3,
+        speedY: (Math.random() - 0.5) * 0.3,
+        alpha: Math.random() * 0.5 + 0.3,
+        color: Math.random() > 0.5 ? '#4f46e5' : '#7c3aed'
+      });
+    }
+
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = p.color + (p.alpha < 1 ? '' : '');
+        ctx.globalAlpha = p.alpha;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      });
+    }
+
+    function updateParticles() {
+      particles.forEach(p => {
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+
+        if (mouse.x !== null && mouse.y !== null) {
+          const dx = p.x - mouse.x;
+          const dy = p.y - mouse.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 100) {
+            p.x += dx / dist * 0.5;
+            p.y += dy / dist * 0.5;
+          }
+        }
+      });
+    }
+
+    function animate() {
+      drawParticles();
+      updateParticles();
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    window.addEventListener("mousemove", e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      parallax.style.transform = `translate(${(e.clientX - window.innerWidth/2) * 0.015}px, ${(e.clientY - window.innerHeight/2) * 0.015}px)`;
+    });
+
+    window.addEventListener("touchmove", e => {
+      const touch = e.touches[0];
+      mouse.x = touch.clientX;
+      mouse.y = touch.clientY;
+      parallax.style.transform = `translate(${(touch.clientX - window.innerWidth/2) * 0.015}px, ${(touch.clientY - window.innerHeight/2) * 0.015}px)`;
+    });
+
+    window.addEventListener("mouseleave", () => {
+      mouse.x = null;
+      mouse.y = null;
+      parallax.style.transform = `translate(0px, 0px)`;
+    });
+
+    window.addEventListener("touchend", () => {
+      mouse.x = null;
+      mouse.y = null;
+      parallax.style.transform = `translate(0px, 0px)`;
+    });
+  </script>
 </body>
 </html>
